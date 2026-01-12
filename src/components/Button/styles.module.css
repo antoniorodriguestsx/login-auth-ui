@@ -10,6 +10,7 @@
 
   transition: all .4s ease;
 }
+
 .button-outlined {
   background-color: white;
   border: 1px solid var(--color-primary);
@@ -23,13 +24,8 @@
   transition: all .4s ease;
 }
 
-.button:hover {
-  cursor: pointer;
-  background-color: var(--color-secondary);
-}
-
+.button:hover,
 .button-outlined:hover {
   cursor: pointer;
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-secondary);
 }

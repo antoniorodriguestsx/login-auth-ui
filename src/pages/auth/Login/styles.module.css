@@ -60,3 +60,18 @@
   line-height: 1.5rem;
   margin: 0 0 60px 0;
 }
+
+@media (max-width: 1179px) {
+  .main {
+    align-items: center;
+    justify-content: center;
+  }
+  .right-side {
+    display: none;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 300px;
+  }
+}
