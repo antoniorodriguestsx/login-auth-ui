@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 
 import Ilustration from "../../../assets/cat-login.png";
 import IlustrationTwo from "../../../assets/cat-login-no-view.png";
+import { Button } from "../../../components/Button";
 
 export default function LoginPage() {
   const [isPasswordFocused, setPasswordFocused] = useState<boolean>(false);
@@ -35,11 +36,19 @@ export default function LoginPage() {
           <InputField
             label="Password"
             placeholder="• • • • • • • • • • • • • • • •"
-            style={{ marginBottom: "40px" }}
+            style={{ marginBottom: "30px" }}
             type="password"
             onFocus={() => setPasswordFocused(true)}
             onBlur={() => setPasswordFocused(false)}
           />
+
+          <Button title="LOGIN NOW" style={{ marginBottom: "20px" }}>
+            Login Now
+          </Button>
+
+          <Button title="SIGNUP NOW" variant="outlined">
+            Register Now
+          </Button>
         </form>
       </section>
 
@@ -49,7 +58,7 @@ export default function LoginPage() {
         </h2>
 
         <h3 className={styles["right-side-subtitle"]}>
-          Welcome stranger, please identify yoursef to continue
+          Welcome stranger, please identify yourself to continue
         </h3>
 
         <img

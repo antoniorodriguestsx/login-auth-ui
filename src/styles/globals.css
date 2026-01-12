@@ -16,4 +16,5 @@ body, html {
 /* colors */
 :root {
   --color-primary: #f95d01;
+  --color-secondary: #e55401;
 }
