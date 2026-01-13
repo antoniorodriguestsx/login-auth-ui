@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 
 import Ilustration from "../../../assets/cat-login.png";
 import IlustrationTwo from "../../../assets/cat-login-no-view.png";
+
 import { Button } from "../../../components/Button";
 
 export default function LoginPage() {
