@@ -8,8 +8,17 @@ import LoginPage from './pages/auth/Login';
 import RegisterPage from './pages/auth/Register';
 import NotFoundPage from './pages/NotFound';
 
+import { AlertRegister } from './controllers/AlertController';
+import { AlertProvider } from './contexts/AlertContext';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    {/* alert */}
+    <AlertProvider>
+      <AlertRegister />
+    </AlertProvider>
+
+    {/* routes */}
     <BrowserRouter>
       <Routes>
         {/* 404 route */}

@@ -28,4 +28,5 @@
 .button-outlined:hover {
   cursor: pointer;
   background-color: var(--color-secondary);
+  color: white;
 }

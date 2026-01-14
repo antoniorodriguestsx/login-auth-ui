@@ -6,24 +6,18 @@ import { Button } from "../../../components/Button";
 
 import Ilustration from "../../../assets/cat-login.png";
 import IlustrationTwo from "../../../assets/cat-login-no-view.png";
-import Alert from "../../../components/Alert";
+
+import { AlertController } from "../../../controllers/AlertController";
 
 export default function RegisterPage() {
   const [isPasswordFocused, setPasswordFocused] = useState<boolean>(false);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    alert("Submited!");
   }
 
   return (
     <main className={styles["main"]}>
-      <Alert
-        text="Sample text for the Alert Component."
-        type="info" 
-      />
-
       <section className={styles["register-form"]}>
         <form onSubmit={onSubmit}>
           <h1 className={styles["register-form-title"]}>
@@ -73,7 +67,7 @@ export default function RegisterPage() {
             Register Now
           </Button>
 
-          <Button title="LOGIN NOW" variant="outlined">
+          <Button title="LOGIN NOW" variant="outlined" onClick={() => new AlertController().show("Este endereço de e-mail já está cadastrado.", "error", 3000)}>
             Login Now
           </Button>
         </form>
