@@ -6,14 +6,17 @@ import Ilustration from "../../../assets/cat-login.png";
 import IlustrationTwo from "../../../assets/cat-login-no-view.png";
 
 import { Button } from "../../../components/Button";
+import { authLogin } from "../../../services/AuthService";
 
 export default function LoginPage() {
   const [isPasswordFocused, setPasswordFocused] = useState<boolean>(false);
+  const [Email, setEmail] = useState<string>("");
+  const [Password, setPassword] = useState<string>("");
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    alert("Submited!");
+    authLogin(Email, Password);
   }
 
   return (
@@ -33,6 +36,8 @@ export default function LoginPage() {
             placeholder="Ex: name@email.com"
             style={{ marginBottom: "20px" }}
             type="email"
+            value={Email}
+            onChange={event => setEmail(event.target.value)}
             required
           />
 
@@ -43,6 +48,8 @@ export default function LoginPage() {
             type="password"
             onFocus={() => setPasswordFocused(true)}
             onBlur={() => setPasswordFocused(false)}
+            value={Password}
+            onChange={event => setPassword(event.target.value)}
             required
           />
 

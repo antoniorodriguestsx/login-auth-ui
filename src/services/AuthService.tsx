@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_API_URL: string = `${import.meta.env.AUTH_API_URL}`;
+const AUTH_API_URL = `${import.meta.env.VITE_AUTH_API_URL}`;
 
 export const authLogin = async (email: string, password: string) => {
   try {
@@ -10,8 +10,31 @@ export const authLogin = async (email: string, password: string) => {
         error: "Invalid email address"
       };
     }
+
+    if (password.length < 5) {
+      return {
+        success: false,
+        error: "Short password"
+      };
+    }
+
+    const response = await axios({
+      method: 'post',
+      url: `${AUTH_API_URL}/login`,
+      data: { email, password }
+    });
+
+    return {
+      success: true,
+      data: response.data
+    }
   }
   catch (error) {
     console.error(error);
+
+    return {
+      success: false,
+      error: null
+    };
   }
 }
