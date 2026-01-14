@@ -32,6 +32,8 @@ export default function LoginPage() {
             label="Email"
             placeholder="Ex: name@email.com"
             style={{ marginBottom: "20px" }}
+            type="email"
+            required
           />
 
           <InputField
@@ -41,6 +43,7 @@ export default function LoginPage() {
             type="password"
             onFocus={() => setPasswordFocused(true)}
             onBlur={() => setPasswordFocused(false)}
+            required
           />
 
           <Button title="LOGIN NOW" style={{ marginBottom: "20px" }}>

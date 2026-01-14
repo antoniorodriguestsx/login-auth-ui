@@ -6,6 +6,7 @@ import { Button } from "../../../components/Button";
 
 import Ilustration from "../../../assets/cat-login.png";
 import IlustrationTwo from "../../../assets/cat-login-no-view.png";
+import Alert from "../../../components/Alert";
 
 export default function RegisterPage() {
   const [isPasswordFocused, setPasswordFocused] = useState<boolean>(false);
@@ -18,6 +19,11 @@ export default function RegisterPage() {
 
   return (
     <main className={styles["main"]}>
+      <Alert
+        text="Sample text for the Alert Component."
+        type="info" 
+      />
+
       <section className={styles["register-form"]}>
         <form onSubmit={onSubmit}>
           <h1 className={styles["register-form-title"]}>
