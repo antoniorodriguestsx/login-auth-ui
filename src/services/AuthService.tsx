@@ -67,6 +67,8 @@ export const authRegister = async (name: string, email: string, password: string
       url: `${AUTH_API_URL}/register`,
       data: { name, email, password }
     });
+    
+    console.log(response.data);
 
     return {
       success: true,

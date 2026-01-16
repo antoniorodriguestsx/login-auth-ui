@@ -7,6 +7,7 @@ import IlustrationTwo from "../../../assets/cat-login-no-view.png";
 
 import { Button } from "../../../components/Button";
 import { authLogin } from "../../../services/AuthService";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   const [isPasswordFocused, setPasswordFocused] = useState<boolean>(false);
@@ -56,11 +57,13 @@ export default function LoginPage() {
           <Button title="LOGIN NOW" style={{ marginBottom: "20px" }}>
             Login Now
           </Button>
-
+        </form>
+        
+        <Link to="/auth/register">
           <Button title="SIGNUP NOW" variant="outlined">
             Register Now
           </Button>
-        </form>
+        </Link>
       </section>
 
       <section className={styles["right-side"]}>
